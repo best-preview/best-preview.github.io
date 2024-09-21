@@ -8,9 +8,27 @@
         body, html {
             margin: 0;
             height: 100%;
-            overflow: auto;
+            overflow: hidden; 
             background-color: black;
             cursor: none;
+        }
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 1);
+            color: white;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999; 
+        }
+        @keyframes swipe-up {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100%); }
         }
         #video-container {
             position: relative;
@@ -86,52 +104,52 @@
 
         .highlight {
             background-color: rgb(48, 48, 48);
-			display: inline;
+            display: inline;
         }
-		#content {
-    padding: 40px; 
-    position: relative;
-    color: white;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-}
+        #content {
+            padding: 40px; 
+            position: relative;
+            color: white;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+        }
 
-h2 {
-    margin-top: 40px;
-    font-size: 50px;
-    color: white;
-    display: inline;
-    text-align: center; 
-}
+        h2 {
+            margin-top: 40px;
+            font-size: 50px;
+            color: white;
+            display: inline;
+            text-align: center; 
+        }
 
-p {
-    margin: 15px 20%;
-    max-width: 800px; 
-    text-align: left;
-	line-height: 20px;
-	color: white;
-	
-}
-#content p {
-	line-height: 50px;
-}
-#footer {
+        p {
+            margin: 15px 20%;
+            max-width: 800px; 
+            text-align: left;
+            line-height: 20px;
+            color: white;
+        }
+        #content p {
+            line-height: 50px;
+        }
+        #footer {
             background-color: #141414; 
             color: white;
             padding: 20px 0;
             position: relative; 
             z-index: 3;
-			text-align: center;
-			display: flex;
-			justify-content: center;
-			align-items: center;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
     </style>
 </head>
 <body>
+    <div id="loading-screen">Loading...</div>
     <div id="video-container">
         <video id="background" autoplay loop muted>
             <source src="vid.mp4" type="video/mp4">
@@ -143,7 +161,7 @@ p {
     <div id="sidebar">
         <p class="vertical">P<br>A<br>G<br>E<br>S</p>
         <p class="horizontal">
-			<a href="#background" style="color: white; text-decoration: none;"><b>5417</b></a><br><br>
+            <a href="#background" style="color: white; text-decoration: none;"><b>5417</b></a><br><br>
             <a href="#header1" style="color: white; text-decoration: none;">Fabrication</a><br><br>
             <a href="#header2" style="color: white; text-decoration: none;">Programming</a><br><br>
             <a href="#header3" style="color: white; text-decoration: none;">Business</a><br><br>
@@ -154,32 +172,30 @@ p {
         <h2 id="header1">Fabrication</h2>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
-
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
 
         <h2 id="header2">Programming</h2>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
 
         <h2 id="header3">Business</h2>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
 
         <h2 id="header4">Notebook</h2>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
     </div>
     <div id="custom-cursor"></div>
-	<footer id="footer">
-        <!-- <p class="l">Programmed by Eshaan Deshmukh & Yog Patel</p> -->
-		<p>Programmed by Eshaan Deshmukh & Yog Patel</p>
+    <footer id="footer">
+        <p>Programmed by Eshaan Deshmukh & Yog Patel</p>
     </footer>
     <script>
         const customCursor = document.getElementById('custom-cursor');
@@ -268,9 +284,12 @@ p {
         lastPos.y = cursorPos.y;
 
         animateCursor();
+        setTimeout(() => {
+    document.getElementById('loading-screen').style.animation = 'swipe-up .8s ease forwards';
+    document.body.style.overflow = 'auto'; 
+}, 2000); 
+
+
     </script>
-	
 </body>
 </html>
-
-

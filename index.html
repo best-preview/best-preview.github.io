@@ -1,72 +1,276 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team 5417</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        body, html {
             margin: 0;
+            height: 100%;
+            overflow: auto;
+            background-color: black;
+            cursor: none;
         }
-        .navbar {
+        #video-container {
+            position: relative;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: 0;
+        }
+        #background {
+            width: 100%;
+            height: auto;
+        }
+        #overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        #sidebar {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50px;
+            height: 100%;
+            background-color: black;
+            color: white;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            background-color: #333;
-            padding: 14px;
-        }
-        .navbar a {
-            color: white;
+            justify-content: center;
             text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
+            transition: width 0.3s ease;
+            z-index: 3;
         }
-        .navbar a:hover {
-            background-color: #ddd;
-            color: black;
+        #sidebar:hover {
+            width: 33%;
         }
-        .logo img {
-            height: 50px;
+        #sidebar p {
+            writing-mode: horizontal-tb;
+            margin: 0;
+            display: none;
         }
-        .content {
-            padding: 20px;
+        #sidebar:hover .horizontal {
+            display: block;
         }
-        .button {
-            background-color: #89CFF0;
+        #sidebar:hover .vertical {
+            display: none;
+        }
+        #sidebar .vertical {
+            display: block;
+        }
+
+        #overlay-text {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
             color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            margin: 5px 0;
-            text-align: center;
+            font-size: 204px;
+            z-index: 2;
         }
-        .button:hover {
-            background-color: #696969;
+        #custom-cursor {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(255, 255, 255, 1);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            transition: width 0.2s, height 0.2s, border-radius 0.2s;
         }
+
+        .highlight {
+            background-color: rgb(48, 48, 48);
+			display: inline;
+        }
+		#content {
+    padding: 40px; 
+    position: relative;
+    color: white;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+h2 {
+    margin-top: 40px;
+    font-size: 50px;
+    color: white;
+    display: inline;
+    text-align: center; 
+}
+
+p {
+    margin: 15px 20%;
+    max-width: 800px; 
+    text-align: left;
+	line-height: 20px;
+	color: white;
+	
+}
+#content p {
+	line-height: 50px;
+}
+#footer {
+            background-color: #141414; 
+            color: white;
+            padding: 20px 0;
+            position: relative; 
+            z-index: 3;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+        }
+
     </style>
 </head>
 <body>
-
-    <div class="navbar">
-        <div>
-            <a href="./index.html">Home</a>
-            <a href="./fabrication.html">Fabrication</a>
-            <a href="./programming.html">Programming</a>
-            <a href="./business.html">Business</a>
-            <a href="./notebook.html">Notebook</a>
-        </div>
-        <div class="logo">
-            <img src="./download.jpg" alt="Logo">
-        </div>
+    <div id="video-container">
+        <video id="background" autoplay loop muted>
+            <source src="vid.mp4" type="video/mp4">
+            Video not available.
+        </video>
+        <div id="overlay"></div>
+        <div id="overlay-text">5417</div>
     </div>
+    <div id="sidebar">
+        <p class="vertical">P<br>A<br>G<br>E<br>S</p>
+        <p class="horizontal">
+			<a href="#background" style="color: white; text-decoration: none;"><b>5417</b></a><br><br>
+            <a href="#header1" style="color: white; text-decoration: none;">Fabrication</a><br><br>
+            <a href="#header2" style="color: white; text-decoration: none;">Programming</a><br><br>
+            <a href="#header3" style="color: white; text-decoration: none;">Business</a><br><br>
+            <a href="#header4" style="color: white; text-decoration: none;">Notebook</a>
+        </p>
+    </div>
+    <div id="content">
+        <h2 id="header1">Fabrication</h2>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
 
-    <div class="content">
-        <h1>best robotics website!!</h1>
+
+        <h2 id="header2">Programming</h2>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
+
+        <h2 id="header3">Business</h2>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
+
+        <h2 id="header4">Notebook</h2>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-placeholder-</p>
+    </div>
+    <div id="custom-cursor"></div>
+	<footer id="footer">
+        <!-- <p class="l">Programmed by Eshaan Deshmukh & Yog Patel</p> -->
+		<p>Programmed by Eshaan Deshmukh & Yog Patel</p>
+    </footer>
+    <script>
+        const customCursor = document.getElementById('custom-cursor');
+        const mousePos = { x: 0, y: 0 };
+        const cursorPos = { x: 0, y: 0 };
+        const speed = 0.1;
+        const maxStretch = 500;
+        let lastPos = { x: 0, y: 0 };
+        let isHoveringLink = false;
+
+        const links = document.querySelectorAll('#sidebar a');
+
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+
+                    document.querySelectorAll('h2').forEach(header => {
+                        header.classList.remove('highlight');
+                    });
+
+                    targetElement.classList.add('highlight');
+                }
+            });
+
+            link.addEventListener('mouseenter', (e) => {
+                isHoveringLink = true;
+                const rect = e.target.getBoundingClientRect();
+                customCursor.style.width = `${rect.width}px`;
+                customCursor.style.height = `${rect.height}px`;
+                customCursor.style.borderRadius = '5px'; 
+                customCursor.style.left = `${rect.left + rect.width / 2}px`;
+                customCursor.style.top = `${rect.top + rect.height / 2}px`;
+                customCursor.style.transform = 'translate(-50%, -50%)';
+            });
+
+            link.addEventListener('mouseleave', () => {
+                isHoveringLink = false;
+                customCursor.style.width = '40px'; 
+                customCursor.style.height = '40px'; 
+                customCursor.style.borderRadius = '50%'; 
+            });
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            mousePos.x = e.clientX;
+            mousePos.y = e.clientY;
+        });
+
+        function animateCursor() {
+            cursorPos.x += (mousePos.x - cursorPos.x) * speed;
+            cursorPos.y += (mousePos.y - cursorPos.y) * speed;
+
+            const deltaX = cursorPos.x - lastPos.x;
+            const deltaY = cursorPos.y - lastPos.y;
+            const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+
+            const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+            const stretchFactor = isHoveringLink ? 1 : Math.min(maxStretch, 1 + distance / 100);
+
+            const width = isHoveringLink ? parseFloat(customCursor.style.width) : 40 * stretchFactor;
+            const height = isHoveringLink ? parseFloat(customCursor.style.height) : 40 * (1 / stretchFactor);
+
+            customCursor.style.left = `${cursorPos.x}px`;
+            customCursor.style.top = `${cursorPos.y}px`;
+            customCursor.style.width = `${width}px`;
+            customCursor.style.height = `${height}px`;
+
+            if (!isHoveringLink) {
+                customCursor.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+            } else {
+                customCursor.style.transform = 'translate(-50%, -50%)';
+            }
+
+            lastPos.x = cursorPos.x;
+            lastPos.y = cursorPos.y;
+
+            requestAnimationFrame(animateCursor);
+        }
+
+        lastPos.x = cursorPos.x;
+        lastPos.y = cursorPos.y;
+
+        animateCursor();
+    </script>
 	
-        <p>nothing yet</p>
-        <button class="button">button (test)</button>
-    </div>
-
 </body>
 </html>
+
+

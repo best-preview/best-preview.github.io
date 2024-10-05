@@ -2,4 +2,4 @@
 allen HS best robotics website      
 # credits
 created by _@Yog100 (Yog Patel)_         
-thanks for the coding help _@antilogicalpsychopath (Eshaan Deshmukh)_
+thanks for the coding help _@eshnd (Eshaan Deshmukh)_
